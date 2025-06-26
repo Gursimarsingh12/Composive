@@ -1,5 +1,11 @@
-site_name: Composive - Compose Responsive & Adaptive Design
-site_description: 🚀 Composive - The ultimate responsive and adaptive UI library for Compose Multiplatform. Create beautiful, responsive layouts effortlessly across Android, iOS, Desktop & Web. Features automatic theme adaptation, responsive dimensions, typography scaling, and adaptive components. Perfect for Kotlin developers building modern cross-platform apps.
+site_name: Composive - Kotlin Multiplatform UI Library | Available on Maven Central
+site_description: >-
+  Composive (not composite) is a powerful Kotlin Multiplatform UI library for building responsive 
+  and adaptive user interfaces across Android, iOS, Desktop, and Web. Create cross-platform apps 
+  with automatic theme adaptation, responsive layouts, and platform-aware components. 
+  Available on Maven Central with comprehensive documentation.
+  Installation: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+
 site_author: Gursimar Singh
 site_url: https://gursimarsingh12.github.io/Composive/
 
@@ -11,6 +17,7 @@ copyright: Copyright &copy; 2024 Gursimar Singh
 
 theme:
   name: material
+  custom_dir: overrides
   features:
     - announce.dismiss
     - content.action.edit
@@ -57,14 +64,14 @@ extra:
     property: G-XXXXXXXXXX # Replace with your Google Analytics ID
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Gursimarsingh12/Composive
-      name: Composive on GitHub
+      link: https://github.com/Gursimarsingh12/composive
+      name: GitHub Repository
+    - icon: fontawesome/solid/download
+      link: https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive
+      name: Download from Maven Central
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/gursimar-singh-ba4196204/
-      name: Gursimar Singh on LinkedIn
-    - icon: fontawesome/solid/envelope
-      link: mailto:anonymouslike083@gmail.com
-      name: Contact Gursimar Singh
+      name: LinkedIn Profile
   tags:
     Compose Multiplatform: compose-multiplatform
     Responsive Design: responsive
@@ -75,6 +82,55 @@ extra:
     Cross Platform: cross-platform
     Adaptive UI: adaptive
     Mobile Development: mobile
+
+  # Maven Central specific metadata
+  maven_central:
+    group_id: io.github.gursimarsingh12
+    artifact_id: composive-responsive-adaptive
+    version: 1.0.0
+    url: https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive
+  
+  # SEO enhancements
+  meta:
+    - name: keywords
+      content: >-
+        kotlin multiplatform ui library, compose multiplatform, responsive ui, adaptive design, 
+        maven central, cross-platform, android, ios, desktop, web, jetpack compose, kotlin library,
+        responsive design, adaptive ui, multiplatform development, compose ui, kotlin multiplatform library
+    - name: author
+      content: Gursimar Singh
+    - name: google-site-verification
+      content: Y8bdbKUjLWACFdnstWxg8jZ8XVKyGVstMzMpWGmQyds
+    - property: og:type
+      content: website
+    - property: og:title
+      content: Composive - Kotlin Multiplatform UI Library | Maven Central
+    - property: og:description
+      content: >-
+        Build responsive cross-platform apps with Composive - now available on Maven Central. 
+        Automatic theme adaptation, responsive layouts, and platform-aware components for Android, iOS, Desktop & Web.
+    - property: og:image
+      content: https://github.com/Gursimarsingh12/composive/raw/main/docs/assets/composive-banner.png
+    - property: og:url
+      content: https://gursimarsingh12.github.io/composive/
+    - name: twitter:card
+      content: summary_large_image
+    - name: twitter:title
+      content: Composive - Kotlin Multiplatform UI Library on Maven Central
+    - name: twitter:description
+      content: >-
+        Create responsive cross-platform UIs with automatic theme adaptation. 
+        Now available on Maven Central: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    - name: maven-central-group
+      content: io.github.gursimarsingh12
+    - name: maven-central-artifact
+      content: composive-responsive-adaptive
+    - name: maven-central-version
+      content: 1.0.0
+    - property: software:availability
+      content: maven-central
+    - property: software:license
+      content: Apache-2.0
 
 plugins:
   - search:
@@ -135,8 +191,11 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - Why Composive: seo-landing.md
+  - Brand: brand-composive.md
   - Getting Started:
     - Overview: overview.md
+    - Download from Maven Central: maven-central.md
     - Installation: installation.md
     - Quick Start: getting-started.md
   - Core Concepts:

@@ -1,4 +1,0 @@
-jdk:
-  - openjdk21
-before_install:
-  - ./scripts/prepareJitpackEnvironment.sh

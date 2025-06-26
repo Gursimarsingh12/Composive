@@ -114,7 +114,7 @@ dependencies {
     // implementation("com.gursimar.composive:composive:0.x.x")
     
     // ✅ Add new dependency
-    implementation("com.gursimar.composive:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
 }
 ```
 

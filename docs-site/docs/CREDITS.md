@@ -133,9 +133,6 @@ Build system that makes multi-platform development possible.
 ### **GitHub Actions**
 CI/CD pipeline for automated testing and publishing.
 
-### **JitPack**
-Package distribution platform that makes our library accessible to the community.
-
 ## 🤝 **Community Contributors**
 
 Thank you to everyone who has contributed to the ecosystem:

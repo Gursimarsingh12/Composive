@@ -415,12 +415,13 @@ fun ResponsiveImage(imageData: ImageData) {
 
 ## Getting Started with Responsive Compose Multiplatform
 
-### **Installation**
+### **Installation via Maven Central**
+
+Add the following to your build.gradle.kts:
 
 ```kotlin
-// build.gradle.kts
 dependencies {
-    implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
 }
 ```
 

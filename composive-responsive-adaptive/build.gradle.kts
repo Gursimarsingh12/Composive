@@ -1,3 +1,4 @@
+import com.vanniktech.maven.publish.SonatypeHost
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
@@ -5,12 +6,9 @@ plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    id("maven-publish")
+    id("com.vanniktech.maven.publish") version "0.30.0"
     id("org.jetbrains.dokka") version "1.9.20"
 }
-
-group = "com.gursimar.composive"
-version = "1.0.0"
 
 val hostOs = System.getProperty("os.name")
 val isMacOs = hostOs == "Mac OS X"
@@ -58,7 +56,7 @@ kotlin {
             api(libs.cupertino)
             api(libs.material3.adaptive)
             api(libs.material3.adaptive.layout)
-            api(libs.material3.window.size.class1)
+            implementation(libs.material3.window.size.class1)
 
             implementation(compose.runtime)
             implementation(compose.foundation)
@@ -104,7 +102,7 @@ kotlin {
 }
 
 android {
-    namespace = "com.gursimar.composive.responsive_adaptive"
+    namespace = "io.github.gursimarsingh12.composive"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     defaultConfig {
@@ -145,55 +143,52 @@ dependencies {
 }
 
 tasks.withType<org.jetbrains.dokka.gradle.DokkaTask>().configureEach {
-    outputDirectory.set(buildDir.resolve("dokka"))
+    outputDirectory.set(layout.buildDirectory.dir("dokka"))
 }
 
-tasks.register<Jar>("javadocJar") {
-    dependsOn(tasks.dokkaHtml)
-    archiveClassifier.set("javadoc")
-    from(buildDir.resolve("dokka"))
-}
-
-afterEvaluate {
-    publishing {
-        publications {
-            withType<MavenPublication> {
-                groupId = "com.github.Gursimarsingh12.composive"
-                artifactId = if (name == "kotlinMultiplatform") {
-                    "composive-responsive-adaptive"
-                } else {
-                    "composive-responsive-adaptive-$name"
-                }
-                version = "1.0.0"
-                
-                pom {
-                    name.set("Composive Responsive Adaptive")
-                    description.set("A Kotlin Multiplatform Compose library for responsive and adaptive UI components across all screen sizes")
-                    url.set("https://github.com/Gursimarsingh12/composive")
-                    
-                    licenses {
-                        license {
-                            name.set("Apache License 2.0")
-                            url.set("https://www.apache.org/licenses/LICENSE-2.0")
-                        }
-                    }
-                    
-                    developers {
-                        developer {
-                            id.set("gursimar")
-                            name.set("Gursimar Singh")
-                            email.set("anonymouslike083@gmail.com")
-                        }
-                    }
-                    
-                    scm {
-                        connection.set("scm:git:git://github.com/Gursimarsingh12/composive.git")
-                        developerConnection.set("scm:git:ssh://github.com/Gursimarsingh12/composive.git")
-                        url.set("https://github.com/Gursimarsingh12/composive")
-                    }
-                }
-                artifact(tasks["javadocJar"])
+publishing {
+    publications {
+        withType<MavenPublication> {
+            artifactId = when (name) {
+                "kotlinMultiplatform" -> "composive-responsive-adaptive"
+                "androidRelease", "androidDebug", "android" -> "composive-responsive-adaptive-android"
+                else -> "composive-responsive-adaptive-$name"
             }
+            version = "1.0.0"
         }
     }
+}
+
+mavenPublishing {
+    coordinates(
+        groupId = "io.github.gursimarsingh12",
+        artifactId = "composive-responsive-adaptive",
+        version = "1.0.0"
+    )
+    pom {
+        name.set("Composive Responsive Adaptive")
+        description.set("Composive is a powerful Kotlin Multiplatform UI library for building responsive and adaptive user interfaces across Android, iOS, Desktop, and Web. Effortlessly create cross-platform apps with automatic theme adaptation, responsive layouts, and platform-aware components using Jetpack Compose Multiplatform.")
+        inceptionYear.set("2025")
+        url.set("https://github.com/Gursimarsingh12/composive")
+        licenses {
+            license {
+                name.set("Apache License 2.0")
+                url.set("https://www.apache.org/licenses/LICENSE-2.0")
+            }
+        }
+        developers {
+            developer {
+                id.set("gursimar")
+                name.set("Gursimar Singh")
+                email.set("anonymouslike083@gmail.com")
+            }
+        }
+        scm {
+            url.set("https://github.com/Gursimarsingh12/composive")
+            connection.set("scm:git:git://github.com/Gursimarsingh12/composive.git")
+            developerConnection.set("scm:git:ssh://github.com/Gursimarsingh12/composive.git")
+        }
+    }
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
+    signAllPublications()
 }

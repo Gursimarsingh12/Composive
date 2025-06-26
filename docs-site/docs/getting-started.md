@@ -35,28 +35,13 @@ By the end of this guide, you'll have:
 
 ## 📦 Step 1: Installation
 
-### Add JitPack Repository
+### Installation via Maven Central
 
-First, add JitPack repository to your `settings.gradle.kts`:
-
-```kotlin
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-    }
-}
-```
-
-### Add Dependency
-
-Add Composive to your `build.gradle.kts` file:
+Add the following to your build.gradle.kts:
 
 ```kotlin
-// In your shared/commonMain build.gradle.kts
 dependencies {
-    implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
 }
 ```
 

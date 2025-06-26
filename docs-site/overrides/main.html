@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+<!-- Google Search Console Verification -->
+<meta name="google-site-verification" content="Y8bdbKUjLWACFdnstWxg8jZ8XVKyGVstMzMpWGmQyds" />
+
+<!-- Additional SEO Meta Tags -->
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="bingbot" content="index, follow" />
+
+<!-- Preconnect for Performance -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://search.maven.org">
+<link rel="preconnect" href="https://central.sonatype.com">
+
+<!-- DNS Prefetch -->
+<link rel="dns-prefetch" href="//github.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+{{ super() }}
+{% endblock %}

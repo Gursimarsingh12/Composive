@@ -83,6 +83,7 @@ schema-description: Responsive and adaptive UI library for Compose Multiplatform
 schema-applicationCategory: DeveloperApplication
 schema-operatingSystem: Android, iOS, Windows, macOS, Linux
 schema-programmingLanguage: Kotlin
+google-site-verification: Y8bdbKUjLWACFdnstWxg8jZ8XVKyGVstMzMpWGmQyds
 ---
 
 # 🚀 Composive - Responsive & Adaptive UI Library

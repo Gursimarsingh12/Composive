@@ -1,12 +1,14 @@
 # Composive - Compose Responsive & Adaptive Design 🎨
 
+> **Note:** It's "**Composive**" (not "composite") - the Kotlin Multiplatform UI library for responsive design! 🎯
+
 [![Kotlin](https://img.shields.io/badge/kotlin-multiplatform-orange.svg)](https://kotlinlang.org/)
 [![Compose](https://img.shields.io/badge/compose-multiplatform-blue.svg)](https://www.jetbrains.com/lp/compose-multiplatform/)
 [![compose-mp-version](https://img.shields.io/badge/compose--multiplatform-1.8.2-blue)](https://github.com/JetBrains/compose-multiplatform)
 [![kotlin-version](https://img.shields.io/badge/kotlin-2.1.21-blue)](https://github.com/JetBrains/compose-jb)
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/Gursimarsingh12/Composive)
-[![JitPack](https://jitpack.io/v/Gursimarsingh12/Composive.svg)](https://jitpack.io/#Gursimarsingh12/Composive)
 [![License](https://img.shields.io/badge/license-Apache--2.0-blue.svg)](https://github.com/Gursimarsingh12/Composive/blob/main/LICENSE)
+[![](https://img.shields.io/maven-central/v/io.github.gursimarsingh12/composive-responsive-adaptive)](https://search.maven.org/search?q=g:io.github.gursimarsingh12)
 
 ![badge-Android](https://img.shields.io/badge/Platform-Android-brightgreen)
 ![badge-iOS](https://img.shields.io/badge/Platform-iOS-lightgray)
@@ -95,14 +97,13 @@ https://github.com/user-attachments/assets/4eb7544c-b145-41ae-9d9e-5b70468357a7
 
 ### 1. Repository Setup
 
-Add JitPack repository to your `settings.gradle.kts`:
+Add Maven Central repository to your `settings.gradle.kts`:
 
 ```kotlin
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         mavenCentral()
-        maven { url = uri("https://jitpack.io") }
     }
 }
 ```
@@ -113,7 +114,7 @@ Add the dependency to your `build.gradle.kts` (Module: shared or commonMain):
 
 ```kotlin
 dependencies {
-    implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
 }
 ```
 

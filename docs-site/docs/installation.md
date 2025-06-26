@@ -73,7 +73,7 @@ Add Composive to your `build.gradle.kts` files:
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+            implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
         }
     }
 }
@@ -88,7 +88,7 @@ If using Gradle version catalogs (`libs.versions.toml`):
 composive = "1.0.0"
 
 [libraries]
-composive-responsive-adaptive = { module = "com.github.Gursimarsingh12.composive:composive-responsive-adaptive", version.ref = "composive" }
+composive-responsive-adaptive = { module = "io.github.gursimarsingh12:composive-responsive-adaptive", version.ref = "composive" }
 ```
 
 Then in your `build.gradle.kts`:
@@ -214,7 +214,7 @@ android-compileSdk = "34"
 
 [libraries]
 # Composive
-composive-responsive-adaptive = { module = "com.github.Gursimarsingh12.composive:composive-responsive-adaptive", version.ref = "composive" }
+composive-responsive-adaptive = { module = "io.github.gursimarsingh12:composive-responsive-adaptive", version.ref = "composive" }
 
 # Compose Multiplatform
 compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }

@@ -86,27 +86,13 @@ ComposiveTheme {
 }
 ```
 
-## Installation - Add the Best Kotlin Multiplatform UI Library
+## Installation via Maven Central
 
-### Quick Setup
-
-Add to your `build.gradle.kts`:
+Add the following to your build.gradle.kts:
 
 ```kotlin
 dependencies {
-    implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
-}
-```
-
-### Repository Configuration
-
-```kotlin
-// settings.gradle.kts
-dependencyResolutionManagement {
-    repositories {
-        mavenCentral()
-        maven { url = uri("https://jitpack.io") }
-    }
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
 }
 ```
 
