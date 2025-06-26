@@ -26,7 +26,7 @@
 
 Watch how Composive automatically adapts your UI across different screen sizes and platforms:
 
-https://github.com/user-attachments/assets/e95f7754-0336-485e-a421-a9277a5597b7
+https://github.com/user-attachments/assets/4eb7544c-b145-41ae-9d9e-5b70468357a7
 
 *Desktop window resizing demonstrates real-time responsive layout changes - from mobile portrait to desktop layouts!*
 
