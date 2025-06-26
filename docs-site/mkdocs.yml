@@ -1,0 +1,165 @@
+site_name: Composive - Compose Responsive & Adaptive Design
+site_description: 🚀 Composive - The ultimate responsive and adaptive UI library for Compose Multiplatform. Create beautiful, responsive layouts effortlessly across Android, iOS, Desktop & Web. Features automatic theme adaptation, responsive dimensions, typography scaling, and adaptive components. Perfect for Kotlin developers building modern cross-platform apps.
+site_author: Gursimar Singh
+site_url: https://gursimarsingh12.github.io/Composive/
+
+repo_name: Gursimarsingh12/Composive
+repo_url: https://github.com/Gursimarsingh12/Composive
+edit_uri: edit/main/docs-site/docs/
+
+copyright: Copyright &copy; 2024 Gursimar Singh
+
+theme:
+  name: material
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  favicon: assets/images/favicon.png
+  logo: assets/images/logo.png
+  icon:
+    logo: logo
+
+extra:
+  homepage: https://gursimarsingh12.github.io/Composive/
+  generator: false
+  analytics:
+    provider: google
+    property: G-XXXXXXXXXX # Replace with your Google Analytics ID
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Gursimarsingh12/Composive
+      name: Composive on GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/gursimar-singh-ba4196204/
+      name: Gursimar Singh on LinkedIn
+    - icon: fontawesome/solid/envelope
+      link: mailto:anonymouslike083@gmail.com
+      name: Contact Gursimar Singh
+  tags:
+    Compose Multiplatform: compose-multiplatform
+    Responsive Design: responsive
+    Android Development: android
+    iOS Development: ios
+    Kotlin: kotlin
+    UI Library: ui-library
+    Cross Platform: cross-platform
+    Adaptive UI: adaptive
+    Mobile Development: mobile
+
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+      lang: en
+  - minify:
+      minify_html: true
+  - meta
+  - tags:
+      tags_file: tags.md
+  - macros
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: datetime
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - toc:
+      permalink: true
+      title: Table of Contents
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: gursimarsingh12
+      repo: composive
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: overview.md
+    - Installation: installation.md
+    - Quick Start: getting-started.md
+  - Core Concepts:
+    - Device Configuration: device-configuration.md
+    - Responsive Configuration: configuration.md
+    - Typography: typography.md
+    - Responsive Dimensions: responsive-dimensions.md
+  - Examples:
+    - Usage Examples: examples.md
+  - API Reference:
+    - Complete API: api-reference.md
+  - Topics:
+    - Kotlin Multiplatform UI Library: kotlin-multiplatform-ui-library.md
+    - Compose Multiplatform Responsive: compose-multiplatform-responsive.md
+  - Community:
+    - Contributing: CONTRIBUTING.md
+    - Migration Guide: migration-guide.md
+    - Credits: CREDITS.md
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/seo.css
+
+extra_javascript:
+  - javascript/extra.js
+  - javascript/seo.js 

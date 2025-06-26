@@ -1,0 +1,47 @@
+# Gitattributes for Composive - Kotlin Multiplatform Project
+
+# Documentation files - exclude from language statistics
+*.md linguist-documentation
+*.html linguist-documentation
+*.css linguist-documentation
+*.js linguist-documentation
+
+# Build and generated files - exclude from language statistics
+**/build/** linguist-generated
+**/site/** linguist-generated
+**/.gradle/** linguist-generated
+**/gradle/wrapper/** linguist-vendored
+
+# Documentation folders - mark as documentation
+docs/** linguist-documentation
+docs-site/** linguist-documentation
+
+# Assets and resources - exclude from language statistics
+*.png linguist-documentation
+*.jpg linguist-documentation
+*.jpeg linguist-documentation
+*.gif linguist-documentation
+*.svg linguist-documentation
+*.mp4 linguist-documentation
+*.mov linguist-documentation
+
+# Configuration files - mark appropriately
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.toml linguist-language=TOML
+*.properties linguist-language=Properties
+*.gradle linguist-language=Gradle
+*.gradle.kts linguist-language=Gradle
+
+# Android resources
+**/res/** linguist-documentation
+**/assets/** linguist-documentation
+
+# iOS resources
+*.xcassets/** linguist-documentation
+*.plist linguist-documentation
+*.swift linguist-language=Swift
+
+# Kotlin source files - explicitly mark as Kotlin
+*.kt linguist-language=Kotlin
+*.kts linguist-language=Kotlin

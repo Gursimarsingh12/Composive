@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://gursimarsingh12.github.io/Composive/sitemap.xml
+
+# Disallow specific paths that shouldn't be indexed
+Disallow: /site/
+Disallow: /docs-site/
+Disallow: /*.git*
+Disallow: /gradle/
+Disallow: /build/
+
+# Allow important resources
+Allow: /assets/
+Allow: /stylesheets/
+Allow: /javascript/
+Allow: /images/
+
+# Crawl delay (optional)
+Crawl-delay: 1 
