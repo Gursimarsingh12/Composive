@@ -91,7 +91,7 @@ function addStructuredData() {
                         "name": "How do I install Composive?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Add JitPack repository to your settings.gradle.kts and include the dependency: implementation('com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0')"
+                            "text": "Add Maven Central repository to your settings.gradle.kts and include the dependency: implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0')"
                         }
                     },
                     {
@@ -126,7 +126,7 @@ function addStructuredData() {
                     {
                         "@type": "HowToStep",
                         "name": "Install Composive",
-                        "text": "Add JitPack repository and Composive dependency to your project"
+                        "text": "Add Maven Central repository and Composive dependency to your project"
                     },
                     {
                         "@type": "HowToStep",
@@ -229,7 +229,8 @@ function initializeSEO() {
         'fonts.gstatic.com',
         'www.google-analytics.com',
         'github.com',
-        'jitpack.io'
+        'jitpack.io',
+        'search.maven.org'
     ];
 
     dnsPrefetchDomains.forEach(domain => {
@@ -335,4 +336,110 @@ if (document.readyState === 'loading') {
     initializeSEO();
     monitorPerformance();
     trackEngagement();
-} 
+}
+
+// Enhanced SEO for Maven Central published library
+document.addEventListener('DOMContentLoaded', function () {
+    // Add Maven Central specific structured data
+    const mavenCentralSchema = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Composive - Kotlin Multiplatform UI Library",
+        "applicationCategory": "DeveloperApplication",
+        "operatingSystem": ["Android", "iOS", "Windows", "macOS", "Linux", "Web"],
+        "programmingLanguage": "Kotlin",
+        "downloadUrl": "https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive/1.0.0/jar",
+        "installUrl": "https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive",
+        "softwareVersion": "1.0.0",
+        "author": {
+            "@type": "Person",
+            "name": "Gursimar Singh",
+            "url": "https://github.com/Gursimarsingh12"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Maven Central Repository",
+            "url": "https://central.sonatype.com/"
+        },
+        "license": "https://www.apache.org/licenses/LICENSE-2.0",
+        "codeRepository": "https://github.com/Gursimarsingh12/composive",
+        "description": "A powerful Kotlin Multiplatform UI library for building responsive and adaptive user interfaces across Android, iOS, Desktop, and Web platforms. Available on Maven Central with automatic dependency resolution.",
+        "keywords": "kotlin multiplatform, compose multiplatform, responsive UI, adaptive design, maven central, cross-platform, android, ios, desktop, web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
+    };
+
+    // Update existing FAQ schema with Maven Central info
+    const existingFAQ = document.querySelector('script[type="application/ld+json"]');
+    if (existingFAQ) {
+        const faqData = JSON.parse(existingFAQ.textContent);
+        if (faqData["@type"] === "FAQPage") {
+            // Add Maven Central specific FAQ
+            faqData.mainEntity.push({
+                "@type": "Question",
+                "name": "How to install Composive from Maven Central?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Add implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0') to your build.gradle.kts dependencies. No additional repository configuration needed as Maven Central is included by default."
+                }
+            });
+            existingFAQ.textContent = JSON.stringify(faqData);
+        }
+    }
+
+    // Add Maven Central schema
+    const mavenScript = document.createElement('script');
+    mavenScript.type = 'application/ld+json';
+    mavenScript.textContent = JSON.stringify(mavenCentralSchema);
+    document.head.appendChild(mavenScript);
+
+    // Update meta keywords for Maven Central
+    const keywordsMetaTag = document.querySelector('meta[name="keywords"]');
+    if (keywordsMetaTag) {
+        const currentKeywords = keywordsMetaTag.getAttribute('content');
+        keywordsMetaTag.setAttribute('content', currentKeywords + ', maven central, maven central repository, kotlin library maven central, compose multiplatform maven central');
+    }
+
+    // Add Maven Central specific meta tags
+    const metaTags = [
+        { name: 'maven-central-group', content: 'io.github.gursimarsingh12' },
+        { name: 'maven-central-artifact', content: 'composive-responsive-adaptive' },
+        { name: 'maven-central-version', content: '1.0.0' },
+        { property: 'software:availability', content: 'maven-central' },
+        { property: 'software:license', content: 'Apache-2.0' }
+    ];
+
+    metaTags.forEach(tag => {
+        const meta = document.createElement('meta');
+        if (tag.name) meta.name = tag.name;
+        if (tag.property) meta.setAttribute('property', tag.property);
+        meta.content = tag.content;
+        document.head.appendChild(meta);
+    });
+
+    // Update CSP for Maven Central
+    const allowedDomains = [
+        'www.google-analytics.com',
+        'github.com',
+        'search.maven.org',
+        'central.sonatype.com',
+        'repo1.maven.org'
+    ];
+
+    // Add preconnect for Maven Central
+    const preconnectLinks = [
+        'https://search.maven.org',
+        'https://central.sonatype.com'
+    ];
+
+    preconnectLinks.forEach(url => {
+        const link = document.createElement('link');
+        link.rel = 'preconnect';
+        link.href = url;
+        document.head.appendChild(link);
+    });
+}); 

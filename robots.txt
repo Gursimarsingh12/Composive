@@ -1,21 +1,62 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://gursimarsingh12.github.io/Composive/sitemap.xml
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
 
-# Disallow specific paths that shouldn't be indexed
-Disallow: /site/
-Disallow: /docs-site/
-Disallow: /*.git*
-Disallow: /gradle/
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Disallow admin and build directories
+Disallow: /admin/
+Disallow: /.git/
 Disallow: /build/
+Disallow: /node_modules/
+Disallow: /*.json$
+Disallow: /*.yml$
+Disallow: /*.yaml$
 
-# Allow important resources
-Allow: /assets/
-Allow: /stylesheets/
-Allow: /javascript/
-Allow: /images/
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.ico
+Allow: /*.woff
+Allow: /*.woff2
 
-# Crawl delay (optional)
-Crawl-delay: 1 
+# Sitemap location
+Sitemap: https://gursimarsingh12.github.io/composive/sitemap.xml
+
+# Crawl delay (be respectful)
+Crawl-delay: 1
+
+# Host directive
+Host: https://gursimarsingh12.github.io/composive/ 
