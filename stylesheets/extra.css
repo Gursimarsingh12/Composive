@@ -1,0 +1,116 @@
+:root {
+  --md-primary-fg-color: #673ab7;
+  --md-primary-fg-color--light: #8e24aa;
+  --md-primary-fg-color--dark: #4527a0;
+  --md-accent-fg-color: #9c27b0;
+}
+
+.md-typeset .composive-hero {
+  text-align: center;
+  padding: 2rem 0;
+  background: linear-gradient(45deg, #673ab7, #9c27b0);
+  color: white;
+  border-radius: 8px;
+  margin: 2rem 0;
+}
+
+.md-typeset .composive-hero h1 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.md-typeset .composive-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+}
+
+.platform-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.platform-badges img {
+  height: 20px;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.feature-card {
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.feature-card h3 {
+  color: var(--md-primary-fg-color);
+  margin-top: 0;
+}
+
+.md-typeset .highlight pre {
+  border-radius: 8px;
+}
+
+.md-clipboard {
+  border-radius: 4px;
+  background-color: var(--md-primary-fg-color);
+}
+
+.md-clipboard:hover {
+  background-color: var(--md-primary-fg-color--light);
+}
+
+.md-button {
+  border-radius: 20px;
+}
+
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: white;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 1rem 0;
+}
+
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .platform-badges {
+    justify-content: flex-start;
+  }
+  
+  .composive-hero {
+    margin: 1rem 0;
+    padding: 1.5rem 1rem;
+  }
+} 
