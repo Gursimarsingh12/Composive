@@ -91,7 +91,7 @@ function addStructuredData() {
                         "name": "How do I install Composive?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Add Maven Central repository to your settings.gradle.kts and include the dependency: implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0')"
+                            "text": "Add Maven Central repository to your settings.gradle.kts and include the dependency: implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2')"
                         }
                     },
                     {
@@ -348,9 +348,9 @@ document.addEventListener('DOMContentLoaded', function () {
         "applicationCategory": "DeveloperApplication",
         "operatingSystem": ["Android", "iOS", "Windows", "macOS", "Linux", "Web"],
         "programmingLanguage": "Kotlin",
-        "downloadUrl": "https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive/1.0.0/jar",
+        "downloadUrl": "https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive/1.0.2/jar",
         "installUrl": "https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive",
-        "softwareVersion": "1.0.0",
+        "softwareVersion": "1.0.2",
         "author": {
             "@type": "Person",
             "name": "Gursimar Singh",
@@ -384,7 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "name": "How to install Composive from Maven Central?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Add implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0') to your build.gradle.kts dependencies. No additional repository configuration needed as Maven Central is included by default."
+                    "text": "Add implementation('io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2') to your build.gradle.kts dependencies. No additional repository configuration needed as Maven Central is included by default."
                 }
             });
             existingFAQ.textContent = JSON.stringify(faqData);
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const metaTags = [
         { name: 'maven-central-group', content: 'io.github.gursimarsingh12' },
         { name: 'maven-central-artifact', content: 'composive-responsive-adaptive' },
-        { name: 'maven-central-version', content: '1.0.0' },
+        { name: 'maven-central-version', content: '1.0.2' },
         { property: 'software:availability', content: 'maven-central' },
         { property: 'software:license', content: 'Apache-2.0' }
     ];
