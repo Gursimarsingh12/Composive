@@ -51,8 +51,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/comp-logo.svg
-  logo: assets/comp-logo.svg
+  favicon: assets/images/comp-logo-simple.svg
+  logo: assets/images/comp-logo.svg
   icon:
     logo: logo
 
