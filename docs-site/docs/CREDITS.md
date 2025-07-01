@@ -207,3 +207,32 @@ When using SF Symbols (through cupertino-icons-extended), please review Apple's 
 **Thank you to everyone who makes open-source development possible!** 🙏
 
 *Standing on the shoulders of giants to make responsive design accessible to all* ✨ 
+
+## Logo Design
+
+The Composive logo was designed by **Pransh Taank**. We extend our sincere gratitude for this creative contribution.
+
+### Connect with the Designer
+
+- LinkedIn: [Pransh Taank](https://www.linkedin.com/in/pransh-taank-03968b273/)
+- GitHub: [100pransh001](https://github.com/100pransh001)
+- Instagram: [@10pransh01](https://www.instagram.com/10pransh01/)
+
+## Other Contributors
+
+We would like to thank all contributors who have helped make Composive better:
+
+- **Gursimar Singh** - Creator and maintainer
+- Community contributors (See our [GitHub contributors page](https://github.com/Gursimarsingh12/Composive/graphs/contributors))
+
+## Open Source Libraries
+
+Composive is built on top of several amazing open-source projects:
+
+- [Kotlin](https://kotlinlang.org/)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose)
+- [Compose Multiplatform](https://www.jetbrains.com/lp/compose-multiplatform/)
+
+## Want to Contribute?
+
+We welcome contributions! Check out our [Contributing Guide](CONTRIBUTING.md) to get started. 

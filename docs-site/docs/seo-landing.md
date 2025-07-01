@@ -84,7 +84,7 @@ canonical: https://gursimarsingh12.github.io/composive/seo-landing/
 ### **Step 1: Install from Maven Central**
 ```kotlin
 dependencies {
-    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 }
 ```
 
@@ -151,7 +151,7 @@ fun MainScreen() {
 
 ## 🔥 **Latest Features (2025)**
 
-### **New in Version 1.0.0**
+### **New in Version 1.0.2**
 - ✨ **Enhanced Web Support** - Full Kotlin/Wasm compatibility
 - 🎨 **Advanced Theming** - Custom theme builder
 - 📱 **Smart Responsive Grid** - Automatic column calculation
@@ -266,4 +266,4 @@ Ready to join thousands of developers building amazing cross-platform apps with 
 
 **Join the Composive revolution and build the future of cross-platform development!** 🚀
 
-*Last updated: January 2025 | Version 1.0.0 | 1M+ downloads* 
+*Last updated: January 2025 | Version 1.0.2 | 1M+ downloads* 

@@ -29,7 +29,7 @@ robots: index, follow
 
 ```kotlin
 dependencies {
-    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 }
 ```
 
@@ -65,7 +65,7 @@ dependencies {
 |----------|-------|
 | **Group ID** | `io.github.gursimarsingh12` |
 | **Artifact ID** | `composive-responsive-adaptive` |
-| **Latest Version** | `1.0.0` |
+| **Latest Version** | `1.0.2` |
 | **Repository** | [Maven Central](https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive) |
 
 ### 📋 **Copy-Paste Installation**
@@ -73,14 +73,14 @@ dependencies {
 #### Gradle (Kotlin DSL)
 ```kotlin
 dependencies {
-    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 }
 ```
 
 #### Gradle (Groovy DSL)
 ```groovy
 dependencies {
-    implementation 'io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0'
+    implementation 'io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2'
 }
 ```
 
@@ -89,14 +89,14 @@ dependencies {
 <dependency>
     <groupId>io.github.gursimarsingh12</groupId>
     <artifactId>composive-responsive-adaptive</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
 #### Version Catalog (libs.versions.toml)
 ```toml
 [versions]
-composive = "1.0.0"
+composive = "1.0.2"
 
 [libraries]
 composive-responsive-adaptive = { module = "io.github.gursimarsingh12:composive-responsive-adaptive", version.ref = "composive" }
@@ -151,10 +151,10 @@ All Composive artifacts on Maven Central are:
 ### 🔍 **Verify Your Download**
 ```bash
 # Check artifact signature
-gpg --verify composive-responsive-adaptive-1.0.0.jar.asc
+gpg --verify composive-responsive-adaptive-1.0.2.jar.asc
 
 # Verify checksums
-sha1sum composive-responsive-adaptive-1.0.0.jar
+sha1sum composive-responsive-adaptive-1.0.2.jar
 ```
 
 ---
@@ -163,7 +163,7 @@ sha1sum composive-responsive-adaptive-1.0.0.jar
 
 | Version | Release Date | Changes |
 |---------|--------------|---------|
-| **1.0.0** | 2025-01-XX | Initial Maven Central release |
+| **1.0.2** | 2025-01-XX | Initial Maven Central release |
 
 ### 📈 **Upcoming Releases**
 - **1.1.0** - Enhanced Web platform support
@@ -177,10 +177,10 @@ sha1sum composive-responsive-adaptive-1.0.0.jar
 ### From JitPack
 ```kotlin
 // Old JitPack dependency
-implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.2")
 
 // New Maven Central dependency
-implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 ```
 
 **Benefits of switching:**

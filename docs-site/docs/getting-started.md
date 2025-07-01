@@ -41,7 +41,7 @@ Add the following to your build.gradle.kts:
 
 ```kotlin
 dependencies {
-    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 }
 ```
 
@@ -472,7 +472,7 @@ repositories {
 }
 
 // ✅ Correct dependency
-implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.2")
 ```
 
 **Issue**: Layout doesn't change when resizing desktop window

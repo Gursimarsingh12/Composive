@@ -73,7 +73,7 @@ Add Composive to your `build.gradle.kts` files:
 kotlin {
     sourceSets {
         commonMain.dependencies {
-            implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+            implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
         }
     }
 }
@@ -85,7 +85,7 @@ If using Gradle version catalogs (`libs.versions.toml`):
 
 ```toml
 [versions]
-composive = "1.0.0"
+composive = "1.0.2"
 
 [libraries]
 composive-responsive-adaptive = { module = "io.github.gursimarsingh12:composive-responsive-adaptive", version.ref = "composive" }
@@ -208,7 +208,7 @@ plugins {
 [versions]
 kotlin = "1.9.21"
 compose = "1.5.11"
-composive = "1.0.0"
+composive = "1.0.2"
 android-minSdk = "21"
 android-compileSdk = "34"
 
@@ -375,7 +375,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "MyApp"
-            packageVersion = "1.0.0"
+            packageVersion = "1.0.2"
         }
     }
 }
@@ -538,11 +538,11 @@ repositories {
 **Problem**: Wrong dependency name
 ```kotlin
 // ❌ Wrong dependency names
-implementation("com.gursimar.composive:composive:1.0.0")
-implementation("com.github.gursimar:composive:1.0.0")
+implementation("com.gursimar.composive:composive:1.0.2")
+implementation("com.github.gursimar:composive:1.0.2")
 
 // ✅ Correct JitPack dependency
-implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.2")
 ```
 
 #### Version Conflicts
@@ -554,7 +554,7 @@ val composeVersion = "latest version of compose"
 
 implementation("androidx.compose.ui:ui:$composeVersion")
 implementation("androidx.compose.material3:material3:$composeVersion")
-implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+implementation("com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.2")
 ```
 
 #### Missing WindowSizeClass Provider
@@ -578,7 +578,7 @@ fun App() {
 1. Check that the repository is public
 2. Verify the release tag exists: `https://github.com/Gursimarsingh12/Composive/releases`
 3. Wait for JitPack to build (may take several minutes)
-4. Check JitPack logs: `https://jitpack.io/com/github/Gursimarsingh12/composive/1.0.0/build.log`
+4. Check JitPack logs: `https://jitpack.io/com/github/Gursimarsingh12/composive/1.0.2/build.log`
 
 #### Network Issues
 
@@ -599,8 +599,8 @@ If you're still having issues:
 ### Verification Checklist
 
 ✅ JitPack repository added to `settings.gradle.kts`  
-✅ Correct dependency name with exact case: `com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.0`  
-✅ Version tag exists: [v1.0.0](https://github.com/Gursimarsingh12/Composive/releases/tag/1.0.0)  
+✅ Correct dependency name with exact case: `com.github.Gursimarsingh12.composive:composive-responsive-adaptive:1.0.2`  
+✅ Version tag exists: [v1.0.2](https://github.com/Gursimarsingh12/Composive/releases/tag/1.0.2)  
 ✅ App wrapped with `ComposiveTheme`  
 ✅ Compatible Compose Multiplatform version  
 ✅ Internet connection available

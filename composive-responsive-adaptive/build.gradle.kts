@@ -10,9 +10,6 @@ plugins {
     id("org.jetbrains.dokka") version "1.9.20"
 }
 
-val hostOs = System.getProperty("os.name")
-val isMacOs = hostOs == "Mac OS X"
-
 kotlin {
     androidTarget {
         compilerOptions {
@@ -21,17 +18,15 @@ kotlin {
         publishLibraryVariants("release", "debug")
     }
 
-    if (isMacOs) {
-        val iosTargets = listOf(
-            iosX64(),
-            iosArm64(),
-            iosSimulatorArm64()
-        )
-        iosTargets.forEach { iosTarget ->
-            iosTarget.binaries.framework {
-                baseName = "ComposiveResponsiveAdaptive"
-                isStatic = true
-            }
+    val iosTargets = listOf(
+        iosX64(),
+        iosArm64(),
+        iosSimulatorArm64()
+    )
+    iosTargets.forEach { iosTarget ->
+        iosTarget.binaries.framework {
+            baseName = "ComposiveResponsiveAdaptive"
+            isStatic = true
         }
     }
 
@@ -77,26 +72,24 @@ kotlin {
             implementation(libs.kotlinx.coroutinesSwing)
         }
 
-        if (isMacOs) {
-            val iosX64Main by getting
-            val iosArm64Main by getting
-            val iosSimulatorArm64Main by getting
+        val iosX64Main by getting
+        val iosArm64Main by getting
+        val iosSimulatorArm64Main by getting
 
-            val iosMain by creating {
-                dependsOn(commonMain)
-                iosX64Main.dependsOn(this)
-                iosArm64Main.dependsOn(this)
-                iosSimulatorArm64Main.dependsOn(this)
-            }
-            val iosX64Test by getting
-            val iosArm64Test by getting
-            val iosSimulatorArm64Test by getting
-            val iosTest by creating {
-                dependsOn(commonTest)
-                iosX64Test.dependsOn(this)
-                iosArm64Test.dependsOn(this)
-                iosSimulatorArm64Test.dependsOn(this)
-            }
+        val iosMain by creating {
+            dependsOn(commonMain)
+            iosX64Main.dependsOn(this)
+            iosArm64Main.dependsOn(this)
+            iosSimulatorArm64Main.dependsOn(this)
+        }
+        val iosX64Test by getting
+        val iosArm64Test by getting
+        val iosSimulatorArm64Test by getting
+        val iosTest by creating {
+            dependsOn(commonTest)
+            iosX64Test.dependsOn(this)
+            iosArm64Test.dependsOn(this)
+            iosSimulatorArm64Test.dependsOn(this)
         }
     }
 }
@@ -109,7 +102,7 @@ android {
         minSdk = libs.versions.android.minSdk.get().toInt()
         consumerProguardFiles("consumer-rules.pro")
     }
-    
+
     lint {
         disable.addAll(
             listOf(
@@ -121,7 +114,7 @@ android {
         abortOnError = false
         checkReleaseBuilds = false
     }
-    
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -154,7 +147,7 @@ publishing {
                 "androidRelease", "androidDebug", "android" -> "composive-responsive-adaptive-android"
                 else -> "composive-responsive-adaptive-$name"
             }
-            version = "1.0.0"
+            version = "1.0.2"
         }
     }
 }
@@ -163,7 +156,7 @@ mavenPublishing {
     coordinates(
         groupId = "io.github.gursimarsingh12",
         artifactId = "composive-responsive-adaptive",
-        version = "1.0.0"
+        version = "1.0.2"
     )
     pom {
         name.set("Composive Responsive Adaptive")

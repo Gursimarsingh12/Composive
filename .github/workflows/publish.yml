@@ -1,0 +1,110 @@
+name: Publish to Maven Central
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+          
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-home-cache-cleanup: true
+          
+      - name: Setup Gradle Properties
+        run: |
+          mkdir -p $HOME/.gradle
+
+          echo "mavenCentralUsername=${{ secrets.SONATYPE_USERNAME }}" >> $HOME/.gradle/gradle.properties
+          echo "mavenCentralPassword=${{ secrets.SONATYPE_PASSWORD }}" >> $HOME/.gradle/gradle.properties
+          
+
+          echo "signing.keyId=${{ secrets.SIGNING_KEY_ID }}" >> $HOME/.gradle/gradle.properties
+          echo "signing.password=${{ secrets.SIGNING_PASSWORD }}" >> $HOME/.gradle/gradle.properties
+          echo "signing.secretKeyRingFile=$HOME/secring.gpg" >> $HOME/.gradle/gradle.properties
+          
+   
+          echo "kotlin.mpp.applyDefaultHierarchyTemplate=false" >> $HOME/.gradle/gradle.properties
+          echo "kotlin.code.style=official" >> $HOME/.gradle/gradle.properties
+          echo "kotlin.native.enableKlibsCrossCompilation=true" >> $HOME/.gradle/gradle.properties
+          
+
+          echo "org.gradle.parallel=true" >> $HOME/.gradle/gradle.properties
+          echo "org.gradle.caching=true" >> $HOME/.gradle/gradle.properties
+          echo "org.gradle.configuration-cache=true" >> $HOME/.gradle/gradle.properties
+          echo "org.gradle.jvmargs=-Xmx4096M -XX:MaxMetaspaceSize=512m -XX:+HeapDumpOnOutOfMemoryError" >> $HOME/.gradle/gradle.properties
+          
+      - name: Decode and verify GPG key
+        run: |
+          echo "${{ secrets.SIGNING_KEY }}" | base64 -d > $HOME/secring.gpg
+          # Verify the GPG key file exists and has content
+          if [ ! -s $HOME/secring.gpg ]; then
+            echo "Error: GPG key file is empty or not created properly"
+            exit 1
+          fi
+          
+      - name: Build and test
+        run: ./gradlew build --no-daemon
+        
+      - name: Get version
+        id: get_version
+        run: |
+          VERSION=$(./gradlew -q printVersion)
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+          
+      - name: Publish to Maven Central
+        run: |
+          # Retry logic for publishing
+          max_attempts=3
+          attempt=1
+          while [ $attempt -le $max_attempts ]; do
+            echo "Publication attempt $attempt of $max_attempts"
+            if ./gradlew publishAllPublicationsToMavenCentralRepository --no-daemon; then
+              echo "Publication successful"
+              break
+            fi
+            attempt=$((attempt + 1))
+            if [ $attempt -le $max_attempts ]; then
+              echo "Publication failed, waiting 30 seconds before retry..."
+              sleep 30
+            fi
+          done
+          if [ $attempt -gt $max_attempts ]; then
+            echo "Publication failed after $max_attempts attempts"
+            exit 1
+          fi
+          
+      - name: Verify publication
+        run: |
+          # Wait for artifacts to be available (Maven Central sync can take time)
+          echo "Waiting for artifacts to sync to Maven Central..."
+          max_attempts=5
+          attempt=1
+          while [ $attempt -le $max_attempts ]; do
+            response=$(curl -s -o /dev/null -w "%{http_code}" https://repo1.maven.org/maven2/io/github/gursimarsingh12/composive-responsive-adaptive/${{ env.VERSION }}/)
+            if [ $response -eq 200 ]; then
+              echo "Publication verified successfully"
+              break
+            fi
+            echo "Attempt $attempt: Artifacts not yet available (HTTP $response), waiting 60 seconds..."
+            sleep 60
+            attempt=$((attempt + 1))
+          done
+          if [ $attempt -gt $max_attempts ]; then
+            echo "Warning: Publication not yet visible on Maven Central after $max_attempts attempts. This is normal as it may take some time to sync."
+          fi 

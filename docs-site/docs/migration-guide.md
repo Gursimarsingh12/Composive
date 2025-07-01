@@ -4,12 +4,12 @@ Guide for migrating between different versions of Composive.
 
 ## 📋 Version Compatibility
 
-### Current Version: 1.0.0
+### Current Version: 1.0.2
 This is the initial stable release of Composive. Future migration guides will be added as new versions are released.
 
-## 🚀 From Preview/Beta to 1.0.0
+## 🚀 From Preview/Beta to 1.0.2
 
-If you were using early preview or beta versions, here's how to migrate to the stable 1.0.0 release:
+If you were using early preview or beta versions, here's how to migrate to the stable 1.0.2 release:
 
 ### Package Changes
 
@@ -18,7 +18,7 @@ If you were using early preview or beta versions, here's how to migrate to the s
 import com.gursimar.composive.ResponsiveTheme
 import com.gursimar.composive.rememberDeviceConfig
 
-// ✅ New (1.0.0)
+// ✅ New (1.0.2)
 import com.gursimar.composive.responsive.theme.ComposiveTheme
 import com.gursimar.composive.responsive.core.rememberDeviceConfiguration
 ```
@@ -114,7 +114,7 @@ dependencies {
     // implementation("com.gursimar.composive:composive:0.x.x")
     
     // ✅ Add new dependency
-    implementation("io.github.gursimarsingh12.composive:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12.composive:composive-responsive-adaptive:1.0.2")
 }
 ```
 
@@ -252,7 +252,7 @@ val config = responsiveConfiguration {
 }
 ```
 
-## 🆕 New Features in 1.0.0
+## 🆕 New Features in 1.0.2
 
 ### Enhanced Platform Detection
 
@@ -424,7 +424,7 @@ Major version updates may include:
 Use this checklist to ensure complete migration:
 
 ### Dependencies
-- [ ] Updated to `composive-responsive-adaptive:1.0.0`
+- [ ] Updated to `composive-responsive-adaptive:1.0.2`
 - [ ] Removed old dependency references
 - [ ] Synced project successfully
 
@@ -467,5 +467,5 @@ Include this information when asking for help:
 
 ---
 
-**Successfully migrated to Composive 1.0.0!** 🎉  
+**Successfully migrated to Composive 1.0.2!** 🎉  
 *Enjoy the improved API and new features!* 

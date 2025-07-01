@@ -421,7 +421,7 @@ Add the following to your build.gradle.kts:
 
 ```kotlin
 dependencies {
-    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+    implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 }
 ```
 

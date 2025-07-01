@@ -1,0 +1,22 @@
+#Kotlin
+kotlin.code.style=official
+kotlin.daemon.jvmargs=-Xmx3072M
+kotlin.mpp.applyDefaultHierarchyTemplate=false
+
+#Gradle
+org.gradle.jvmargs=-Xmx4096M -Dfile.encoding=UTF-8
+org.gradle.configuration-cache=true
+org.gradle.caching=true
+
+#Android
+android.nonTransitiveRClass=true
+android.useAndroidX=true
+
+kotlin.native.enableKlibsCrossCompilation=true
+
+# Publishing Configuration (Replace with your values)
+mavenCentralUsername=your_sonatype_username
+mavenCentralPassword=your_sonatype_password
+signing.keyId=your_gpg_key_id
+signing.password=your_gpg_key_password
+signing.secretKeyRingFile=path/to/your/secring.gpg 

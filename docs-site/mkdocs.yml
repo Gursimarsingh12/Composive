@@ -4,7 +4,7 @@ site_description: >-
   and adaptive user interfaces across Android, iOS, Desktop, and Web. Create cross-platform apps 
   with automatic theme adaptation, responsive layouts, and platform-aware components. 
   Available on Maven Central with comprehensive documentation.
-  Installation: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+  Installation: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
 
 site_author: Gursimar Singh
 site_url: https://gursimarsingh12.github.io/Composive/
@@ -51,8 +51,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/images/favicon.png
-  logo: assets/images/logo.png
+  favicon: assets/comp-logo.svg
+  logo: assets/comp-logo.svg
   icon:
     logo: logo
 
@@ -87,7 +87,7 @@ extra:
   maven_central:
     group_id: io.github.gursimarsingh12
     artifact_id: composive-responsive-adaptive
-    version: 1.0.0
+    version: 1.0.2
     url: https://search.maven.org/artifact/io.github.gursimarsingh12/composive-responsive-adaptive
   
   # SEO enhancements
@@ -120,13 +120,13 @@ extra:
     - name: twitter:description
       content: >-
         Create responsive cross-platform UIs with automatic theme adaptation. 
-        Now available on Maven Central: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.0")
+        Now available on Maven Central: implementation("io.github.gursimarsingh12:composive-responsive-adaptive:1.0.2")
     - name: maven-central-group
       content: io.github.gursimarsingh12
     - name: maven-central-artifact
       content: composive-responsive-adaptive
     - name: maven-central-version
-      content: 1.0.0
+      content: 1.0.2
     - property: software:availability
       content: maven-central
     - property: software:license
