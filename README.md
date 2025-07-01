@@ -90,7 +90,7 @@ https://github.com/user-attachments/assets/4eb7544c-b145-41ae-9d9e-5b70468357a7
 
 ### Quick Test Command
 ```bash
-./gradlew desktopRunHot --mainClass com.example.yourApp.Main.kt --stacktrace --auto
+./gradlew desktopRunHot --mainClass com.example.yourApp.MainKt --stacktrace --auto
 ```
 
 ## 🚀 Quick Start
